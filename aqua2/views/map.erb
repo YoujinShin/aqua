@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>  
+    <title>AQUA BRIDGE</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/~ys1438/sinatra/aqua2/views/css/leaflet.css" />
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js?1.29.1"></script>
+    <style type="text/css">
+      html, body, #map {
+        background-color:white;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="/~ys1438/sinatra/aqua2/views/js/leaflet.js"></script>
+    <div id="map"></div>
+    <script type="text/javascript">
+
+      /* - - - Filters Icon - - - */
+      var filters = new L.LayerGroup();
+      var mapIcon = L.Icon.extend({ options: { iconSize: [32, 32] } });     
+      var newFilter = new mapIcon({iconUrl: '/~ys1438/sinatra/aqua2/views/mapimg/newFilter.png', iconSize: [22.1,33.2] }); // BSF.png
+      
+      // new filters
+      L.marker([-6.8559, 39.2381],{icon: newFilter}).addTo(filters);
+              
+      /*    Open Street Map (changes)    */
+      var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+      var osmAttrib='Map data © OpenStreetMap contributors';
+      var osm = new L.TileLayer(osmUrl, {minZoom: 8, maxZoom: 19, attribution: osmAttrib});
+      var map = L.map('map', {
+        center: [-6.856, 39.23781], //-6.85615, 39.23690 //-6.8534, 39.23484 // lat, lon
+        zoom: 16,
+        zoomControl: false
+      });
+      map.addLayer(osm);
+      
+      // Set layers
+      var baseLayers = {
+        "OSM" : osm
+      }
+      var overLays = {
+        "New Filters": filters,
+      }
+      L.control.layers(baseLayers, overLays).addTo(map);
+      new L.Control.Zoom({ position : 'topright'}).addTo(map);
+    </script>
+  </body>
+</html>

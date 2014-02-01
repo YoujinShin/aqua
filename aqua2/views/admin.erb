@@ -1,0 +1,106 @@
+<html>
+    <head>
+        <title>AQUA BRIDGE</title>
+    </head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link href="/~ys1438/sinatra/aqua2/views/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/~ys1438/sinatra/aqua2/views/css/bootstrap.select.css" rel="stylesheet">
+    
+    <style type="text/css">
+        h2 {
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-size: 1.9em;/*34px;*/
+            position: relative;
+            text-align:center;
+            top: 13px;
+            color: black;
+        }
+        img {
+            position: relative;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            top: 25px;
+            max-width: 300;
+        }
+        p {
+            position: relative;
+            text-align:center;
+            padding-left: 12%;
+            padding-right: 12%;
+            
+            top: 150px;
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-size: 1.2em;
+        }
+    </style>
+    
+    <body>
+    
+    <div class="navbar-wrapper">
+      <div class="container">
+
+        <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="http://itp.nyu.edu/~ys1438/sinatra/aqua2">PROJECT AQUA</a>
+            </div>
+            
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="http://itp.nyu.edu/~ys1438/sinatra/waterQuality">Map</a></li>
+                
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Data</a><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="http://itp.nyu.edu/~ys1438/sinatra/aqua2/filter">Add a filter</a></li>
+                    <li><a href="http://itp.nyu.edu/~ys1438/sinatra/aqua2/perform">Update filter performance</a></li>
+                  </ul>
+                </li>
+                
+                <li><a href="http://itp.nyu.edu/~ys1438/sinatra/aqua2/member">Team</a></li>
+                
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/~ys1438/sinatra/aqua2/views/js/bootstrap.min.js"></script>
+
+    <img src="http://itp.nyu.edu/~ys1438/sinatra/waterQuality/views/mapImg/logo1.png" width="140"/>
+    
+    <% for currentFilter in @f %>
+        <p>
+            <%= currentFilter.status %>
+            ,  &nbsp <%= currentFilter.reference %>
+            <form action="http://itp.nyu.edu/~ys1438/sinatra/aqua2/delete/<%= currentFilter.id %>" method="post">
+                <div class="col-sm-offset-5 col-sm-7 col-md-offset-5 col-md-7">
+                    <!--<input class="btn btn-block btn-wishket btn-lg account-btn" type="submit" value="Edit" />-->
+                    </br></br></br></br></br></br>
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <input type="submit" value="Delete" />
+                </div>
+            </form>
+        </p>
+    <% end %>
+    </br></br></br></br></br></br></br></br>
+    </br></br></br></br></br></br></br></br>
+    </body>
+</html>

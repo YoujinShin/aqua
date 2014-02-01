@@ -1,0 +1,222 @@
+<html>
+    <head>
+        <title>AQUA BRIDGE</title>
+    </head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link href="/~ys1438/sinatra/aqua2/views/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style type="text/css">
+        h2 {
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-size: 1.9em;/*34px;*/
+            position: relative;
+            text-align:center;
+            top: 13px;
+            color: black;
+        }
+        img {
+            position: relative;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            top: 25px;
+            max-width: 300;
+        }
+        p {
+            position: relative;
+            text-align:center;
+            padding-left: 12%;
+            padding-right: 12%;
+            
+            top: 150px;
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-size: 1.2em;
+        }
+    </style>
+    
+    <body>
+    
+    <div class="navbar-wrapper">
+      <div class="container">
+
+        <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="http://itp.nyu.edu/~ys1438/sinatra/aqua2">PROJECT AQUA</a>
+            </div>
+            
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="http://itp.nyu.edu/~ys1438/sinatra/waterQuality">Map</a></li>
+                
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Data</a><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="http://itp.nyu.edu/~ys1438/sinatra/aqua2/filter">Add a filter</a></li>
+                    <li><a href="http://itp.nyu.edu/~ys1438/sinatra/aqua2/perform">Update filter performance</a></li>
+                  </ul>
+                </li>
+                
+                <li><a href="http://itp.nyu.edu/~ys1438/sinatra/aqua2/member">Team</a></li>
+                
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+         
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/~ys1438/sinatra/aqua2/views/js/bootstrap.min.js"></script>
+
+    <img src="http://itp.nyu.edu/~ys1438/sinatra/waterQuality/views/mapImg/logo1.png" width="140"/>
+        
+    <div class="container">
+        <div id="messages">  
+        </div>
+    </div>
+    
+    <div class="container page" onreset="getLocation()">
+        <div class="page-inner">
+            <div class="page-header">
+              <!--<h2> HI <small> welcome </small> </h2>-->
+            </div>
+          
+          <div class="content">
+            <div class="content-inner">
+               
+              
+            <div class="row">
+              <div class="col-md-8 col-sm-8">
+                <div class="col-md-12 col-sm-12">
+                  <form action="http://itp.nyu.edu/~ys1438/sinatra/aqua2/save"
+                        method="post" class="form-horizontal" autocomplete="off" id="signup-form">
+                    <input type='hidden' name='csrfmiddlewaretoken' value='Xdh9EkkUo5RiwHmdCuMKLjh42GSqd74q' />
+                      
+                        <div class="form-group ">
+                            <label for="reference" class="control-label col-sm-5 col-md-5 required">Reference
+                            </label>
+                            <div class="col-sm-7 col-md-7">
+                                <input type="text" name="reference" required="required" autocomplete="off" class="required form-control" id="id_username">
+                                    <span class="help-block">ex) B3_BSF01_N220</span>
+                            </div>
+                        </div>
+                        <!--
+                        <button onclick="getLocation()" style="position: absolute; left: 140px; top: 26px">GPS</button>
+                        -->
+
+                        <div class="form-group ">
+                            <label for="lat" class="control-label col-sm-5 col-md-5 required">Latitude
+                            </label>
+                            <div class="col-sm-7 col-md-7">
+                                <input type="text" name="lat" required="required" autocomplete="off" id="tlat" class="required form-control" maxlength="75">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group ">
+                            <label for="lon" class="control-label col-sm-5 col-md-5 required">Longitude
+                            </label>
+                            <div class="col-sm-7 col-md-7">
+                                <input type="text" name="lon" required="required" autocomplete="off" id="tlng" class="required form-control" maxlength="75">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group ">
+                            <label for="date" class="control-label col-sm-5 col-md-5 required">Date
+                            </label>
+                            <div class="col-sm-7 col-md-7">
+                                <input type="date" name="date" required="required" autocomplete="off" id="date" class="required form-control" maxlength="75">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group ">
+                            <label for="password" class="control-label col-sm-5 col-md-5 required">Password
+                            </label>
+                            <div class="col-sm-7 col-md-7">
+                                <input type="password" name="password" required="required" autocomplete="off" id="password" class="required form-control" maxlength="75">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="col-sm-offset-5 col-sm-7 col-md-offset-5 col-md-7">
+                            <!--<div class="col-sm-7 col-md-7">-->
+                           
+                              <input class="btn btn-block btn-wishket btn-lg account-btn" type="submit" value="Add a new filter" style="color:#fff"/>
+                             
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="col-sm-offset-5 col-sm-7 col-md-offset-5 col-md-7">
+                                 
+                                <input onclick="getLocation()" class="btn btn-facebook btn-lg btn-block" id="gps_button" value="Get GPS data" style="color:#5DBCD2" />
+                                
+                                <hr />
+                            </div>
+                        </div>
+                  </form>
+                </div>
+              </div>
+              
+            </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!--
+    <button onclick="getLocation()" style="position: relative; left: 140px; top: 26px">GPS</button>
+    -->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+    var x=document.getElementById("demo");
+    function getLocation()
+    {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition,showError);
+        } else {x.innerHTML="Geolocation is not supported by this browser.";}
+    }
+    
+    function showPosition(position) {
+        var latlon=position.coords.latitude+","+position.coords.longitude;
+        var tlat = position.coords.latitude;
+        var tlng = position.coords.longitude;
+            $("#tlat").val (tlat);
+            $("#tlng").val (tlng);
+    
+        var img_url="http://maps.googleapis.com/maps/api/staticmap?center="+latlon
+        +"&markers=icon:http://tinyurl.com/2ftvtt6|"+latlon+
+        "&zoom=14&size=320x180&sensor=false";
+        document.getElementById("mapholder").innerHTML="<img src='"+img_url+"'>";
+    }
+      
+    function showError(error) {
+        switch(error.code) 
+        {
+            case error.PERMISSION_DENIED:
+              x.innerHTML="User denied the request for Geolocation."
+              break;
+            case error.POSITION_UNAVAILABLE:
+              x.innerHTML="Location information is unavailable."
+              break;
+            case error.TIMEOUT:
+              x.innerHTML="The request to get user location timed out."
+              break;
+            case error.UNKNOWN_ERROR:
+              x.innerHTML="An unknown error occurred."
+              break;
+        }
+    }
+    </script>
+    </body>
+</html>

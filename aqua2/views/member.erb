@@ -1,0 +1,149 @@
+<html>
+    <head>
+        <title>AQUA BRIDGE</title>
+    </head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link href="/~ys1438/sinatra/aqua2/views/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/~ys1438/sinatra/aqua2/views/css/basic.css" rel="stylesheet">
+    
+    <style type="text/css">
+        h1 {
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-size: 1.2em;/*1.8em; 22px*/
+            position: absolute;
+            left: 20px;
+            top: 25px;
+            color: black;
+        }
+        h2 {
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-size: 1.9em;/*34px;*/
+            position: relative;
+            text-align:center;
+            top: 125px;
+            color: #BABABA;
+        }
+        img {
+            position: relative;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            top: 50px;
+        }
+        p {
+            position: relative;
+            text-align:center;
+            padding-left: 10%;
+            padding-right: 10%;
+            
+            top: 100px;
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-size: 1.3em;
+        }
+        strong {
+            font-weight:bold; /* not necessary as browsers have
+                                          already set the default font-weight
+                                          to bold. It's just for demonstration. */
+            color:black;
+        }
+        blockquote {
+            font-size: 1.1em;
+        }
+    </style>
+    
+    <body>
+    <div class="navbar-wrapper">
+      <div class="container">
+
+        <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="http://itp.nyu.edu/~ys1438/sinatra/aqua2">PROJECT AQUA</a>
+            </div>
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="http://itp.nyu.edu/~ys1438/sinatra/waterQuality">Map</a></li>
+                
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Data</a><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="http://itp.nyu.edu/~ys1438/sinatra/aqua2/filter">Add a filter</a></li>
+                    <li><a href="http://itp.nyu.edu/~ys1438/sinatra/aqua2/perform">Update filter performance</a></li>
+                  </ul>
+                </li>
+                
+                <li><a href="http://itp.nyu.edu/~ys1438/sinatra/aqua2/member">Team</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+         
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="/~ys1438/sinatra/aqua2/views/js/bootstrap.min.js"></script>
+            
+    <div class="landing-addendum">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-12">
+            
+            <div class="media landing-interview">
+              <div class="col-md-2 col-sm-2">
+                </br>
+                <img src='/~ys1438/sinatra/aqua2/views/img/peter.png'>
+              </div>
+              <div class="media-body">
+                <blockquote>
+                    <strong>Peter K. Kang <font color="gray">| Co-founder</font></strong> </br>
+                    Peter K. Kang(pkkang@mit.edu) is a PhD candidate in Civil & Environmental Engineering at MIT. He has expertise in groundwater hydrology, flow and transport through porous media, and water purification technologies. During his PhD studies, he has developed an effective and predictive transport model through porous media systems which can be applied to low-cost water treatment systems and contaminant transport through groundwater. He is also a founder of AQUA-BRIDGE, which integrates low-cost water filtration technology with Information Communication Technology (ICT) to allow effective data collection for making data-driven decisions to solve drinking water problems in developing countries. The project is ongoing and has successfully distributed biosand filters to deliver clean water to Kiwalani community in Tanzania. Peter holds a Bachelor of Civil, Urban & Geosystem engineering from Seoul National University with summa cum laude in 2008, and Master of Science from MIT in 2010. He has been selected as a Department of Energy Office of Science Graduate Fellow in 2010 and Martin Fellows for Environmental Sustainability at MIT in 2013. Peter will lead the project and be in charge of water filtration technology.
+                </blockquote>
+              </div>
+            </div>
+            
+            <div class="media landing-interview">
+              <div class="col-md-2 col-sm-2">
+                </br>
+                <img src='/~ys1438/sinatra/aqua2/views/img/pratik.png'>
+              </div>
+              <div class="media-body">
+                <blockquote>
+                    <strong>Pratik Shah <font color="gray">| Co-founder</font></strong> </br>
+                    Pratik Shah(pratik.shah@molbio.mgh.harvard.edu) is a fellow in the Departments of Molecular Biology and Microbiology and Immunology at MGH and Harvard Medical School and in the Infectious Disease Initiative at the Broad Institute of MIT and Harvard. He was part of a team that discovered a novel vaccine antigen against pneumococcal infections. He has a strong educational background and interest in biological sciences with BS, MS and PhD all in Microbiology, and in particular with infectious diseases that primarily affect children and the elderly (pneumonia and diarrhea). In addition to having an academic research career, he is interested in tackling global health concerns and the bench-to-bedside transition of discoveries from the laboratory to markets in the developing world. Pratik is also involved in MIT Enterprise Forum and MIT Media lab. Pratik has been developing approaches that could significantly improve the quality of drinking water by selectively inhibiting harmful bacteria that cause diarrhea. He is also actively working on the bacterium Vibrio cholerae that causes cholera, a waterborne disease, and is taking several innovative approaches such as digital gene expression technology and proteomic studies with this deadly pathogen. Pratik is leading the effort to design, implement and innovate water-quality testing and criteria to warn community members of unsafe water. He also develops the business plan and helps in making Aqua-Bridge financially sustainable.
+                </blockquote>
+              </div>
+            </div>  
+            
+            <div class="media landing-interview">
+              <div class="col-md-2 col-sm-2">
+                <!--<img class="img-responsive" src="http://bit.ly/1iflioi">-->
+                </br>
+                <img src='/~ys1438/sinatra/aqua2/views/img/youjin.png'>
+              </div>
+              <div class="media-body">
+                <blockquote>
+                    <strong>Youjin Shin <font color="gray">| Co-founder</font></strong> </br>
+                    Youjin Shin(ys1438@nyu.edu) is a M.P.S(Master of Professional Studies) candidate in Interactive Telecommunications Program at New York University. She also holds MS degree in Mechanical Engineering at Korea University. In her graduate years in Mechanical Engineering, she developed the surveillance mobile robot system under the Ministry of Knowledge Economy of Korea (MKE) as a part of government's SMART project to develop the new economic growth engines for South Korea. In addition to her strong technical skills, she has experiences working with humanitarian non-profits, including a six-month internship at Amnesty International, and training at the Appropriate Technology Academy where she worked on water purification solutions for communities in Rwanda. In her current studies at ITP, she has developed an website for empowering women in Haiti and currently working on a project to solve energy poverty in Burundi in Design for UNICEF class. Based on her strong technical background and diverse experiences, she will be in charge of developing a community-based web platform in project AQUA BRIDGE.            
+                </blockquote>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+          
+    </div>
+          
+     </br></br></br></br></br></br>
+    </body>
+</html>
